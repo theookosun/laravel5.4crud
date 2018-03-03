@@ -11,18 +11,19 @@
                           </tr>
                         </thead>
                         <tbody>
-                          
+                            @if (count($articles) > 0)
+                                @foreach ($articles->all() as $article)
                           <tr>
-                            <th scope="row">1</th>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td><a href="{{url('')}}" class="label label-primary">Read</a> |
-                                <a href="{{url('')}}" class="label label-success">Update</a> |
-                                <a href="{{url('')}}" class="label label-danger">Delete</a>
+                            <th scope="row">{{$article->id}}</th>
+                            <td>{{$article->title}}</td>
+                            <td>{{$article->description}}</td>
+                            <td><a href="{{url('')}}" class="btn btn-primary">Read</a> |
+                                <a href="{{url('')}}" class="btn btn-success">Update</a> |
+                                <a href="{{url('')}}" class="btn btn-danger">Delete</a>
                             </td>
                           </tr>
-                          
-                          
+                          @endforeach
+                          @endif
                         </tbody>
                       </table> 
         </div>

@@ -15,4 +15,11 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/', 'CreatesController@home');
+
+Route::get('/create', 'CreatesController@create');
+
+Route::post('/insert', 'CreatesController@add');
+
+
 

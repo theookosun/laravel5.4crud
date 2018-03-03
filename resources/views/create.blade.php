@@ -1,72 +1,48 @@
-<table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">Type</th>
-            <th scope="col">Column heading</th>
-            <th scope="col">Column heading</th>
-            <th scope="col">Column heading</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="table-active">
-            <th scope="row">Active</th>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr>
-            <th scope="row">Default</th>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr class="table-primary">
-            <th scope="row">Primary</th>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr class="table-secondary">
-            <th scope="row">Secondary</th>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr class="table-success">
-            <th scope="row">Success</th>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr class="table-danger">
-            <th scope="row">Danger</th>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr class="table-warning">
-            <th scope="row">Warning</th>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr class="table-info">
-            <th scope="row">Info</th>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr class="table-light">
-            <th scope="row">Light</th>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr class="table-dark">
-            <th scope="row">Dark</th>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-        </tbody>
-      </table> 
+@include('inc.header')
+<div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form class="form-horizontal "method="POST" action="{{'/insert'}}">  {{ csrf_field() }}
+                    
+                    <fieldset>
+                      <legend>Laravel CRUD</legend>
+                      @if(count($errors) > 0)
+                        @foreach($errors->all() as $error)
+                        <div class="alert alert-danger"> {{$error}}</div>
+                        @endforeach
+                        @endif  
+                      <div class="form-group row">
+                         <div class="col-sm-10">
+                                
+                        </div>
+                      </div>
+                      <div class="form-group">
+                           
+                        <label for="exampleInputEmail1">Title</label>
+                        
+                        <input type="text" class="form-control" name="title" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter title">
+                        <small id="emailHelp" class="form-text text-muted">We never share your email with anyone else.</small>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Description</label>
+                        
+                        <textarea class="form-control" name="description" id="exampleInputPassword1" placeholder="Description">
+                        </textarea>
+                        
+                        </div>
+                        
+                       
+                      </fieldset>
+                      <a href="{{url('/')}}" class="btn btn-danger">Back</a>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </fieldset>
+                    
+                  </form>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
