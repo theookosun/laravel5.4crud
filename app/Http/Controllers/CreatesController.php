@@ -53,8 +53,15 @@ class CreatesController extends Controller
             }
 
             public function read($id){
-                $articles = Article::all();
-        
-        return view('read', ['articles' => $articles]);
+                $articles = Article::find($id);
+                 return view('read', ['articles' => $articles]);
+            }
+
+            public function delete($id){
+               
+                Article::where('id',$id)->delete();
+
+                return redirect('/')-> with('success message', 'Article deleted successfully');
+                
             }
 }
