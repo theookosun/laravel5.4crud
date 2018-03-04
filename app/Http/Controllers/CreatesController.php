@@ -52,7 +52,9 @@ class CreatesController extends Controller
                return redirect('/')->with('success message', 'Article updated successfully');
             }
 
-            public function read(){
-                
+            public function read($id){
+                $articles = Article::all();
+        
+        return view('read', ['articles' => $articles]);
             }
 }
