@@ -1,6 +1,16 @@
 @include('inc.header')
     <div class="container">
         <div class="row">
+                
+                   
+                   
+                    @if (session('success message'))
+                        <div class="alert alert-success"> {{session('success message')}}</div>
+
+                   
+                   
+        </div>
+                @endif
                 <table class="table table-hover">
                         <thead>
                           <tr>
@@ -18,7 +28,7 @@
                             <td>{{$article->title}}</td>
                             <td>{{$article->description}}</td>
                             <td><a href="{{url('')}}" class="btn btn-primary">Read</a> |
-                                <a href="{{url('')}}" class="btn btn-success">Update</a> |
+                                <a href='{{url("/update/{$article->id}") }}' class="btn btn-success">Update</a> |
                                 <a href="{{url('')}}" class="btn btn-danger">Delete</a>
                             </td>
                           </tr>

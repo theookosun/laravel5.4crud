@@ -25,6 +25,21 @@ class CreatesController extends Controller
               'description'=> 'required'
           ]);
 
-          return 'Validation Pass';
+         $articles= new Article;
+         $articles->title = $request->input('title');
+         $articles->description = $request->input('description');
+         $articles->save();
+         return redirect('')->with('success message', 'Article successfully Added');
+
       }
+
+      public function update($id){
+          $articles = Article::find($id);  
+          
+          return view('update',['articles'=> $articles]);
+            }
+
+            public function edit($id){
+                return $id;
+            }
 }

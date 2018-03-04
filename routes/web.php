@@ -20,6 +20,8 @@ Route::get('/', 'CreatesController@home');
 Route::get('/create', 'CreatesController@create');
 
 Route::post('/insert', 'CreatesController@add');
+Route::get('/update/{id}', 'CreatesController@update');
+Route::post('/edit/{id}', 'CreatesController@edit');
 
 
 
