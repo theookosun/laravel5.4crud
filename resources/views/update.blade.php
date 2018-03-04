@@ -20,7 +20,7 @@
                            
                         <label for="exampleInputEmail1">Title</label>
                         
-                        <input type="text" class="form-control" value="<?php echo $articles->title; ?>"name="title" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter New title">
+                        <input type="text" class="form-control" value="<?php echo $articles->title; ?>" name="title" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter New title">
                         <small id="emailHelp" class="form-text text-muted">We never share your email with anyone else.</small>
                       </div>
                       <div class="form-group">
